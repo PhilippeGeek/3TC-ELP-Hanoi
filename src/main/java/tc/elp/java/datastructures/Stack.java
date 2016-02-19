@@ -15,7 +15,7 @@ public interface Stack {
      * Get the top element of the Stack
      * @return the value of the top element
      */
-    int top();
+    int top() throws EmptyStackException;
 
     /**
      * Push an element into the stack
@@ -26,5 +26,5 @@ public interface Stack {
     /**
      * Delete the top element of the Stack
      */
-    void pop();
+    void pop() throws EmptyStackException;
 }
