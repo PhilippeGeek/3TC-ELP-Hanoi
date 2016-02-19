@@ -1,4 +1,8 @@
-package tc.elp.java.datastructures;
+package tc.elp.java.vienne_moutier;
+
+import tc.elp.java.datastructures.EmptyStackException;
+import tc.elp.java.datastructures.IllegalHanoiException;
+import tc.elp.java.datastructures.StackByArray;
 
 /**
  * Stack which valid the Hanoi conditions.

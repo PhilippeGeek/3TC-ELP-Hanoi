@@ -1,7 +1,6 @@
 package tc.elp.java.vienne_moutier;
 
 import tc.elp.java.datastructures.EmptyStackException;
-import tc.elp.java.datastructures.HanoiStack;
 import tc.elp.java.datastructures.IllegalHanoiException;
 
 /**
