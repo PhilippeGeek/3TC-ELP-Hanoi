@@ -19,12 +19,13 @@ public class StackByArray extends DynamicArray implements Stack{
     public void pop() throws EmptyStackException {
         if(empty())
             throw new EmptyStackException();
-        if(myArray.length == 1){
+        if(myArray.length <= 1){
             myArray = new int[]{};
             mySize = 0;
+            return;
         }
         int prevLength = myArray.length;
-        myArray = Arrays.copyOfRange(myArray, 1, prevLength - 1);
+        myArray = Arrays.copyOfRange(myArray, 1, prevLength);
         myArray = Arrays.copyOf(myArray, prevLength);
     }
 }
