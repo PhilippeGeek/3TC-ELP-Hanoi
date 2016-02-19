@@ -3,22 +3,22 @@ package tc.elp.java.datastructures;
 /**
  * Stack stored by linked objects.
  */
-public class StackByLinkedList implements Stack {
+public class StackByLinkedList<T> implements Stack<T> {
 
-    private LinkedListNode topNode, lastNode;
+    private LinkedListNode<T> topNode, lastNode;
 
     public boolean empty() {
         return topNode == null;
     }
 
-    public int top() throws EmptyStackException {
+    public T top() throws EmptyStackException {
         if(empty())
             throw new EmptyStackException();
         return topNode.getValue();
     }
 
-    public void push(int value) {
-        LinkedListNode node = new LinkedListNode(value);
+    public void push(T value) {
+        LinkedListNode<T> node = new LinkedListNode<>(value);
         if(empty()){
             topNode = lastNode = node;
         } else {

@@ -12,7 +12,7 @@ public class TestStack {
      * @param aStack any stack (which must be empty)
      * @return false in case of failure, true otherwise
      */
-    public boolean test(Stack aStack) {
+    public boolean test(Stack<Integer> aStack) {
         int nb = 0;
         int nbok = 0;
 
@@ -56,7 +56,7 @@ public class TestStack {
      */
     @Test
     public void linkedListTest() {
-        test(new StackByLinkedList());
+        test(new StackByLinkedList<Integer>());
     }
 
     /**
@@ -64,6 +64,6 @@ public class TestStack {
      */
     @Test
     public void arrayListTest() {
-        test(new StackByArray());
+        test(new StackByArray<Integer>());
     }
 }

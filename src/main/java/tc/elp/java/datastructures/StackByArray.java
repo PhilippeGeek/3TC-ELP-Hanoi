@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * Stacked Collection stored by an array
  */
-public class StackByArray extends DynamicArray implements Stack{
+public class StackByArray<T> extends DynamicArray<T> implements Stack<T>{
     public boolean empty() {
         return size() == 0;
     }
 
-    public int top() throws EmptyStackException {
+    public T top() throws EmptyStackException {
         if(empty())
             throw new EmptyStackException();
         return get(mySize-1);
@@ -20,7 +20,7 @@ public class StackByArray extends DynamicArray implements Stack{
         if(empty())
             throw new EmptyStackException();
         if(myArray.length < 1){
-            myArray = new int[]{};
+            myArray = new Object[]{};
             mySize = 0;
             return;
         }

@@ -7,7 +7,7 @@ import tc.elp.java.datastructures.StackByArray;
 /**
  * Stack which valid the Hanoi conditions.
  */
-public class HanoiStack extends StackByArray {
+public class HanoiStack extends StackByArray<Integer> {
 
 
     private final String name;
@@ -17,7 +17,7 @@ public class HanoiStack extends StackByArray {
     }
 
     @Override
-    public void push(int value) {
+    public void push(Integer value) {
         try {
             if(!empty() && top()<=value){
                 throw new IllegalHanoiException(value, top());

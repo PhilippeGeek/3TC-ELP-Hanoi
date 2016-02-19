@@ -26,7 +26,7 @@ public class TestDynamicArray {
         int nb = 0;
         int nbok = 0;
 
-        DynamicArray a = new DynamicArray();
+        DynamicArray<Integer> a = new DynamicArray<>();
 
         final int n = 256;
         for (int i = 0; i < n; i++) {

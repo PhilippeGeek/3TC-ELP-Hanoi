@@ -1,22 +1,24 @@
 package tc.elp.java.datastructures;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
  * Integer Array simple implementation.
  */
-public class DynamicArray {
+public class DynamicArray<T> {
     protected int mySize = 0;
-    protected int[] myArray = new int[0];
+    protected Object[] myArray = new Object[0];
 
-    public int get(int index){
+    public T get(int index){
         if(index<0 || index>=mySize){
             throw new IndexOutOfBoundsException(index+" is not a valid index !");
         }
-        return myArray[index];
+        //noinspection unchecked
+        return (T) myArray[index];
     }
 
-    public void push(int index, int value){
+    public void push(int index, T value){
         if(index<0 || index>=capacity()){
             throw new IndexOutOfBoundsException(index+" is not a valid index !");
         }
@@ -26,7 +28,7 @@ public class DynamicArray {
         myArray[index]=value;
     }
 
-    public void push(int value){
+    public void push(T value){
         while (size() >= capacity()){ // While we have not a capacity at least equal to size + 1 (element which we add)
             increaseStorage();
         }
@@ -38,7 +40,7 @@ public class DynamicArray {
         return mySize;
     }
 
-    public  int capacity(){
+    public int capacity(){
         return myArray.length;
     }
 

@@ -4,29 +4,25 @@ package tc.elp.java.datastructures;
  * Node used to store {@link StackByLinkedList}'s elements.
  * @see StackByLinkedList
  */
-public class LinkedListNode {
+public class LinkedListNode<T> {
 
-    public LinkedListNode(int value) {
+    public LinkedListNode(T value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public LinkedListNode getNext() {
+    public LinkedListNode<T> getNext() {
         return next;
     }
 
-    public void setNext(LinkedListNode next) {
+    public void setNext(LinkedListNode<T> next) {
         this.next = next;
     }
 
-    private LinkedListNode next;
+    private LinkedListNode<T> next;
 
-    private int value;
+    private T value;
 }

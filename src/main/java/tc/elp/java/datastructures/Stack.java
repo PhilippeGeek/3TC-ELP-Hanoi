@@ -3,7 +3,7 @@ package tc.elp.java.datastructures;
 /**
  * Interface to implement a Stack.
  */
-public interface Stack {
+public interface Stack<T> {
 
     /**
      * Determine if the Stack is empty
@@ -15,13 +15,13 @@ public interface Stack {
      * Get the top element of the Stack
      * @return the value of the top element
      */
-    int top() throws EmptyStackException;
+    T top() throws EmptyStackException;
 
     /**
      * Push an element into the stack
      * @param value The value to push into
      */
-    void push(int value);
+    void push(T value);
 
     /**
      * Delete the top element of the Stack
