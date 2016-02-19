@@ -6,8 +6,8 @@ import java.util.Arrays;
  * Integer Array simple implementation.
  */
 public class DynamicArray {
-    private int mySize = 1;
-    private int[] myArray = new int[1];
+    private int mySize = 0;
+    private int[] myArray = new int[0];
 
     public int get(int index){
         if(index<0 || index>=mySize){
@@ -17,11 +17,21 @@ public class DynamicArray {
     }
 
     public void push(int index, int value){
-
+        if(index<0 || index>=capacity()){
+            throw new IndexOutOfBoundsException(index+" is not a valid index !");
+        }
+        if(mySize<index){
+            mySize = index+1;
+        }
+        myArray[index]=value;
     }
 
     public void push(int value){
-
+        while (size() >= capacity()){ // While we have not a capacity at least equal to size + 1 (element which we add)
+            increaseStorage();
+        }
+        myArray[mySize]=value;
+        mySize++;
     }
 
     public int size(){
@@ -37,7 +47,7 @@ public class DynamicArray {
     }
 
     private void increaseStorage(){
-        myArray = Arrays.copyOf(myArray, myArray.length*2);
+        myArray = Arrays.copyOf(myArray, Math.max(1, myArray.length*2));
     }
 
     private void decreaseStorage(){
