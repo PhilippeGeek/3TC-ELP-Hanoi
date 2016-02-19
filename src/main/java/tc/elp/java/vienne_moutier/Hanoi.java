@@ -1,4 +1,8 @@
-package tc.elp.java.datastructures;
+package tc.elp.java.vienne_moutier;
+
+import tc.elp.java.datastructures.EmptyStackException;
+import tc.elp.java.datastructures.HanoiStack;
+import tc.elp.java.datastructures.IllegalHanoiException;
 
 /**
  * Run the Hanoi tower problem
@@ -29,13 +33,11 @@ public class Hanoi {
     }
 
     private void moveHanoi(HanoiStack origin, HanoiStack destination) {
-        System.out.println("Move from "+origin.getName()+" to "+destination.getName());
         try {
             int value = origin.top();
             origin.pop();
             destination.push(value);
-            printStacks();
-        } catch (EmptyStackException|IllegalHanoiException e) {
+        } catch (EmptyStackException |IllegalHanoiException e) {
             throw new RuntimeException(e);
         }
 
