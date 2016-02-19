@@ -14,10 +14,10 @@ public class Hanoi {
         for(int i=0; i<STACK_NUMBER; i++){
             stacks[i] = new HanoiStack("Stack "+i);
         }
-        for(int i=1; i<=STACK_SIZE; i++)
+        for(int i=STACK_SIZE; i>0; i--)
             stacks[0].pushedSecured(i);
         printStacks();
-        hanoiProcess(STACK_SIZE, stacks);
+        hanoiProcess(STACK_SIZE, stacks[0], stacks[2], stacks[1]);
         printStacks();
     }
 

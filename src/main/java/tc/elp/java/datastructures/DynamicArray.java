@@ -46,7 +46,7 @@ public class DynamicArray {
         return "List of "+size()+" element(s)";
     }
 
-    private void increaseStorage(){
+    protected void increaseStorage(){
         myArray = Arrays.copyOf(myArray, Math.max(1, myArray.length*2));
     }
 
