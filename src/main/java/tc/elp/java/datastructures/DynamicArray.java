@@ -1,11 +1,13 @@
 package tc.elp.java.datastructures;
 
+import java.util.Arrays;
+
 /**
  * Integer Array simple implementation.
  */
 public class DynamicArray {
-    private int mySize = 0;
-    private int[] myArray = {};
+    private int mySize = 1;
+    private int[] myArray = new int[1];
 
     public int get(int index){
         if(index<0 || index>=mySize){
@@ -32,5 +34,13 @@ public class DynamicArray {
 
     public String toString(){
         return "List of "+size()+" element(s)";
+    }
+
+    private void increaseStorage(){
+        myArray = Arrays.copyOf(myArray, myArray.length*2);
+    }
+
+    private void decreaseStorage(){
+        myArray = Arrays.copyOf(myArray, mySize);
     }
 }
