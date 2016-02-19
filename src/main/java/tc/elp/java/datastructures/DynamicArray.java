@@ -6,8 +6,8 @@ import java.util.Arrays;
  * Integer Array simple implementation.
  */
 public class DynamicArray {
-    private int mySize = 0;
-    private int[] myArray = new int[0];
+    protected int mySize = 0;
+    protected int[] myArray = new int[0];
 
     public int get(int index){
         if(index<0 || index>=mySize){

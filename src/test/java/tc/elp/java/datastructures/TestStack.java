@@ -58,4 +58,12 @@ public class TestStack {
     public void linkedListTest() {
         test(new StackByLinkedList());
     }
+
+    /**
+     * Call simple test
+     */
+    @Test
+    public void arrayListTest() {
+        test(new StackByArray());
+    }
 }
